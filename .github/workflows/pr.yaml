@@ -1,0 +1,11 @@
+name: On PR
+on:
+  pull_request_target:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  start-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run remote workflow
+        uses: benlloydjones/actions-test/.github/workflows/pr.yaml@main
